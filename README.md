@@ -1,6 +1,20 @@
 # Data Cleaning Engine
 ### An AI-Assisted Data Quality and Cleaning Platform
 
+## System Architecture
+
+### Part 1: Data Understanding
+
+![Data Understanding](assets/architechture1.jpeg)
+
+### Part 2: Quality Intelligence
+
+![Quality Intelligence](assets/architechture2.jpeg)
+
+### Part 3: Execution and Validation
+
+![Execution and Validation](assets/architechture3.jpeg)
+
 Data Cleaning Engine is a Python-based application that helps users understand, detect, and resolve data quality issues in CSV and Excel datasets.
 
 The project combines deterministic data processing with LLM-assisted recommendations to create a controlled data-cleaning workflow.
