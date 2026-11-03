@@ -1,0 +1,5 @@
+issue_type,expected_records,detected_records,true_positives,false_positives,false_negatives,true_negatives,precision,recall,f1_score,accuracy
+missing_values,50,50,50,0,0,980,100.0,100.0,100.0,100.0
+inconsistent_categorical_formatting,40,40,40,0,0,990,100.0,100.0,100.0,100.0
+potential_outliers,10,18,10,8,0,1012,55.56,100.0,71.43,99.22
+duplicate_rows,30,30,30,0,0,1000,100.0,100.0,100.0,100.0
