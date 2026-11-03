@@ -41,6 +41,19 @@ def load_environment():
                 os.environ.setdefault(key, value)
 
 
+def get_api_key():
+    try:
+        import streamlit as st
+        secret = st.secrets.get("GEMINI_API_KEY")
+
+        if secret:
+            return str(secret).strip()
+    except Exception:
+        pass
+
+    return os.getenv("GEMINI_API_KEY", "").strip()
+
+
 load_environment()
 
 
@@ -101,9 +114,7 @@ class GeminiCleaningEngine:
         client=None,
         types_module=None
     ):
-        self.api_key = (
-            api_key or os.getenv("GEMINI_API_KEY", "")
-        ).strip()
+        self.api_key = (api_key or get_api_key()).strip()
 
         self.model = (
             model
@@ -130,7 +141,7 @@ class GeminiCleaningEngine:
         if not self.api_key:
             raise GeminiEngineError(
                 "GEMINI_API_KEY is not configured. "
-                "Add GEMINI_API_KEY=your_key to the project .env file."
+                "Add it to Streamlit Secrets or your local .env file."
             )
 
         try:
